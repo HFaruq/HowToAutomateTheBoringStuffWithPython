@@ -16,7 +16,7 @@ email_re = re.compile(r'''(
     [a-zA-Z0-9.-]+  # Domain name
     (\.[a-zA-Z]{2,4})  # Dot-something
     )''', re.VERBOSE)
-
+print(type(email_re)) #<class 're.Pattern'>
 # TODO: Find matches in clipboard text.
 text = str(pyperclip.paste())
 matches = []

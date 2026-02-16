@@ -17,4 +17,5 @@ phone_regex = group(
 
 pattern = re.compile(phone_regex)
 match = pattern.search('My number is 415-555-1212.')
+print(type(match)) #match object
 print(match.group())
