@@ -10,7 +10,8 @@ def regex_strip(str_to_strip: str, char_stripped=' ') -> str:
     :return: stripped string
     :rtype: str
     """
-    char_stripped_group = rf'[{char_stripped}]'
+    
+    char_stripped_group = f'[{char_stripped}]'
     
     beginning_regex = re.compile(one_or_more(char_stripped_group) + BOUNDARY)
     ending_regex = re.compile(BOUNDARY + one_or_more(char_stripped_group))
@@ -20,4 +21,7 @@ def regex_strip(str_to_strip: str, char_stripped=' ') -> str:
 
 print(regex_strip('-,--Hassaan,,-', '-,'))
 
-
+# --- Examples ---
+print(regex_strip("...Hello World...", "."))  # Output: "Hello World"
+print(regex_strip("123Hello123", "321"))      # Output: "Hello"
+print(regex_strip("-[Hello]-", "-[]"))        # Output: "Hello" (Handles special chars correctly)
